@@ -24,6 +24,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
+            <Image Source="TomatoTime" Aspect="Fill" HorizontalOptions="Center" />
             <StackLayout Grid.Row="2" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="8"  BackgroundColor="Aquamarine" Padding="20">
                 <Label Text="Username" TextColor="CornflowerBlue" FontSize="Medium"/>
                 <Entry Placeholder="Enter Username" PlaceholderColor="CornflowerBlue" IsReadOnly="False" TextColor="CornflowerBlue"></Entry>
