@@ -1,40 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.MainPage">
-
-    <ContentPage.Content>
-        <Grid BackgroundColor ="White" VerticalOptions="FillAndExpand">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
-            <Image Source="TomatoTime" Aspect="Fill" HorizontalOptions="Center" />
-            <StackLayout Grid.Row="2" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="8"  BackgroundColor="Aquamarine" Padding="20">
-                <Label Text="Username" TextColor="CornflowerBlue" FontSize="Medium"/>
-                <Entry Placeholder="Enter Username" PlaceholderColor="CornflowerBlue" IsReadOnly="False" TextColor="CornflowerBlue"></Entry>
-                <Label Text="Password" TextColor="CornflowerBlue" FontSize="Medium" />
-                <Editor Placeholder="Enter Password" PlaceholderColor="CornflowerBlue" IsReadOnly="False" TextColor="CornflowerBlue"></Editor>
-                <Button Text="Sign In" Grid.Row="2"/>
-            </StackLayout>
-
-
-        </Grid>
-    </ContentPage.Content>
-
-</ContentPage>
+  <!--Pages can be added as references or inline-->
+  <ContentPage Title="Tab 1" />
+  <ContentPage Title="Tab 2" />
+  <ContentPage Title="Tab 3" />
+</TabbedPage>

@@ -7,12 +7,13 @@
     },
     {
       "appearances": [],
-      "scale": "3x",
-      "idiom": "universal"
+      "scale": "1x",
+      "idiom": "universal",
+      "filename": "TomatoTime1.png"
     },
     {
       "appearances": [],
-      "scale": "1x",
+      "scale": "3x",
       "idiom": "universal",
       "filename": "TomatoTime.png"
     }

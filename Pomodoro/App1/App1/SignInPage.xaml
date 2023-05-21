@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.SignInPage">
+
+    <ContentPage.Content>
+        <Grid BackgroundColor ="#fff8bc" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="8" BackgroundColor="#fff8bc" HasShadow="False">
+               <Image Source="TomatoTime" /> 
+            </Frame>
+            <Frame BackgroundColor="#fff1c4" Grid.Row="2" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="8" Padding="0" Margin="10" HasShadow="False" CornerRadius="20">
+                <StackLayout Padding="20" BackgroundColor="#fffff5">
+                    <Label Text="Sign In" FontAttributes="Bold" TextColor="#4A7631" FontSize="Medium" HorizontalTextAlignment="Center" Margin="0,0,0,10"/>
+                    <!--<Label Text="Username" TextColor="CornflowerBlue" FontSize="Medium"/>-->
+                    <Frame BorderColor="Black" HeightRequest="50" Padding="1" HasShadow="False" Margin="0,0,0,10" >
+                        <Entry x:Name="UsernameEntry" Placeholder="Enter Username" PlaceholderColor="#789966" IsReadOnly="False" TextColor="#789966" ></Entry>
+                    </Frame>
+                    
+                    <!--<Label Text="Password" TextColor="CornflowerBlue" FontSize="Medium" />-->
+                    <Frame BorderColor="Black" HeightRequest="50" Padding="1" HasShadow="False" Margin="0,0,0,10">
+                        <Entry x:Name="PasswordEntry" Placeholder="Enter Password" PlaceholderColor="#789966" IsReadOnly="False" IsPassword="True" Keyboard ="Text" TextColor="#789966"></Entry>
+                    </Frame>
+
+                    <Button Text="Sign In" Clicked="OnSignInClicked" Grid.Row="2" HeightRequest="50" BackgroundColor="#2D3728" Margin="0,0,0,10"/>
+                    <Button Text="Sign Up" Clicked="OnSignUpClicked" Grid.Row="2" HeightRequest="50" BackgroundColor="#2D3728"/>
+                </StackLayout>
+            </Frame>
+            
+
+
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
