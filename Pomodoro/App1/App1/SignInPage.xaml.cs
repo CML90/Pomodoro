@@ -17,8 +17,9 @@ namespace App1
 
         private async void OnSignInClicked(object sender, EventArgs e)
         {
-            if (ProfileServer.GetInstance().AccountExists(UsernameEntry.Text, PasswordEntry.Text))
-                await Navigation.PushAsync(new MainPage());
+            await Navigation.PushAsync(new MainPage());
+            //if (ProfileServer.GetInstance().AccountExists(UsernameEntry.Text, PasswordEntry.Text))
+            //    await Navigation.PushAsync(new MainPage());
         }
 
         private async void OnSignUpClicked(object sender, EventArgs e)
