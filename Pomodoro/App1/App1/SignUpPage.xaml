@@ -53,7 +53,7 @@
 
                     <!--<Label Text="Email" TextColor="CornflowerBlue" FontSize="Medium" />-->
                     <Frame BorderColor="Black" HeightRequest="50" Padding="1" HasShadow="False" Margin="0,0,0,10">
-                        <Entry x:Name="EmailEntry" Placeholder="Enter Email" PlaceholderColor="#789966" IsReadOnly="False" IsPassword="True" Keyboard ="Text" TextColor="#789966"></Entry>
+                        <Entry x:Name="EmailEntry" Placeholder="Enter Email" PlaceholderColor="#789966" IsReadOnly="False" Keyboard ="Email" TextColor="#789966"></Entry>
                     </Frame>
 
                     <!--<Label Text="Password" TextColor="CornflowerBlue" FontSize="Medium" />-->
