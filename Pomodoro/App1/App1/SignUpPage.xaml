@@ -61,8 +61,8 @@
                         <Entry x:Name="PasswordEntry" Placeholder="Enter Password" PlaceholderColor="#789966" IsReadOnly="False" IsPassword="True" Keyboard ="Text" TextColor="#789966"></Entry>
                     </Frame>
 
-                    <Button Text="Sign Up" Clicked="OnSignUpClicked" Grid.Row="2" HeightRequest="50" BackgroundColor="#2D3728" Margin="0,0,0,10"/>
-                    <Button Text="Back" Clicked="OnBackClicked" Grid.Row="2" HeightRequest="50" BackgroundColor="#2D3728" Margin="0,0,0,10"/>
+                    <Button Text="Sign Up" Clicked="OnSignUpClicked" Grid.Row="2" HeightRequest="50" TextTransform="None" BackgroundColor="#2D3728" Margin="0,0,0,10"/>
+                    <Button Text="Back" Clicked="OnBackClicked" Grid.Row="2" HeightRequest="50" TextTransform="None" BackgroundColor="#2D3728" Margin="0,0,0,10"/>
 
                 </StackLayout>
             </Frame>

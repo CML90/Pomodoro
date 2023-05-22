@@ -40,8 +40,8 @@
                         <Entry x:Name="PasswordEntry" Placeholder="Enter Password" PlaceholderColor="#789966" IsReadOnly="False" IsPassword="True" Keyboard ="Text" TextColor="#789966"></Entry>
                     </Frame>
 
-                    <Button Text="Sign In" Clicked="OnSignInClicked" Grid.Row="2" HeightRequest="50" BackgroundColor="#2D3728" Margin="0,0,0,10"/>
-                    <Button Text="Sign Up" Clicked="OnSignUpClicked" Grid.Row="2" HeightRequest="50" BackgroundColor="#2D3728"/>
+                    <Button Text="Sign In" Clicked="OnSignInClicked" Grid.Row="2" HeightRequest="50" TextTransform="None"  BackgroundColor="#2D3728" Margin="0,0,0,10"/>
+                    <Button Text="Sign Up" Clicked="OnSignUpClicked" Grid.Row="2" HeightRequest="50" TextTransform="None" BackgroundColor="#2D3728"/>
                 </StackLayout>
             </Frame>
             

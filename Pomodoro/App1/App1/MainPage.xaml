@@ -4,16 +4,79 @@
              x:Class="App1.MainPage"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="White"
             >
     <!--Pages can be added as references or inline-->
-    <ContentPage Title="Tab 1" >
+    <ContentPage Title="Setting" >
+        <Grid BackgroundColor ="#fffee1" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+        </Grid>
+    </ContentPage>
+    
+    <ContentPage Title="Timer" >
+        <Grid BackgroundColor ="#8D1E1E" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="8" BackgroundColor="#691D1D" Padding="20" Margin="15" CornerRadius="20" HasShadow="False">
+                <StackLayout Padding="0,30,0,0">
+                    <Button Text="POMODORO" TextTransform="None" BackgroundColor="#5B1515"></Button>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Short Break" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515" Margin="0,0,14,0" ></Button>
+                        <Button Text="Long Break" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515"></Button>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="24:00" FontAttributes="Bold" FontSize="Header" ></Label>
+                    </StackLayout>
+                    
+
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Pause" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515" Margin="0,0,14,0"></Button>
+                        <Button Text="Skip" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515"></Button>
+                    </StackLayout>
+                    
+                </StackLayout>
+            </Frame>
+        </Grid>
+
         
     </ContentPage>
-    <ContentPage Title="Tab 2" >
-        
-    </ContentPage>
-    <ContentPage Title="Tab 3" >
-        <Grid BackgroundColor ="White" VerticalOptions="FillAndExpand">
+    
+    <ContentPage Title="Tasks" >
+        <Grid BackgroundColor ="#fffee1" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -25,19 +88,18 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Frame  CornerRadius="5" HasShadow="False" Padding="10" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3">
+            <Frame  CornerRadius="15" HasShadow="False" Padding="0" Margin="10" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#FFE298"  >
                 <ListView x:Name="myListView" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3"
                   VerticalOptions="FillAndExpand"
-                  HasUnevenRows="true" BackgroundColor="AliceBlue">
+                  HasUnevenRows="true" BackgroundColor="#FFE298">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Frame CornerRadius="5" HasShadow="False" Padding="5" Margin="20">
+                                <Frame CornerRadius="5" HasShadow="False" Padding="5" Margin="20" BackgroundColor="#fffee1">
                                     <StackLayout>
-                                        <Label Text="{Binding Title}" TextColor="CornflowerBlue" FontSize="Medium"/>
-                                        <Label Text="{Binding Description}" TextColor="CornflowerBlue" FontSize="Caption"/>
-                                        <Button Text="Edit" />
-                                        <Button Text="Del" />
+                                        <Label Text="{Binding Title}" TextColor="#789966" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                        <Label Text="{Binding Description}" TextColor="#789966" FontSize="Caption" HorizontalTextAlignment="Center"/>
+                                        <Button Text="Accomplished" BackgroundColor="#2D3728" Margin="10"/>
                                     </StackLayout>
                                 </Frame>
                             </ViewCell>
@@ -45,10 +107,13 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </Frame>
-            <StackLayout BackgroundColor="AliceBlue" Grid.Row="3" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="3">
-                <Label Text="To Do List" FontSize="Large" TextColor="CornflowerBlue" HorizontalTextAlignment="Center" Margin="20"/>
-                <Button Text="Add" BackgroundColor="CornflowerBlue" Margin="10"/>
-            </StackLayout>
+            <Frame Grid.Row="3" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="3" Padding="0" Margin="10,0,10,10" HasShadow="False" CornerRadius="15">
+                <StackLayout BackgroundColor="#FFE298" >
+                    <Label Text="To Do" FontSize="Medium" TextColor="#789966" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="10"/>
+                    <Button Text="Add" TextColor="#fffee1" BackgroundColor="#2D3728" Margin="10" TextTransform="None" />
+                </StackLayout>
+            </Frame>
+            
         </Grid>
     </ContentPage>
 </TabbedPage>
