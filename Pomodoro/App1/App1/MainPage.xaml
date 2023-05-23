@@ -23,7 +23,17 @@
                 <Setter Property="TextColor" Value="#fffee1" />
                 <Setter Property="TextTransform" Value="None" />
                 <Setter Property="BackgroundColor" Value="#2D3728" />
-                <Setter Property="Margin" Value="10" />
+            </Style>
+            <Style x:Key="YellFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#FFE298" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+            <Style x:Key="RedButtons" TargetType="Button">
+                <Setter Property="WidthRequest" Value="160" />
+                <Setter Property="TextTransform" Value="None" />
+                <Setter Property="BackgroundColor" Value="#5B1515" />
             </Style>
         </ResourceDictionary>
     </TabbedPage.Resources>
@@ -43,18 +53,18 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Frame  CornerRadius="15" HasShadow="False" Padding="0" Margin="10" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#FFE298"  >
+            <Frame Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource YellFrame}" Margin="10" >
                 <ListView x:Name="ToDoListView" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3"
                   VerticalOptions="FillAndExpand"
                   HasUnevenRows="true" BackgroundColor="#FFE298">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Frame CornerRadius="5" HasShadow="False" Padding="5" Margin="20" BackgroundColor="#fffee1">
+                                <Frame CornerRadius="5" HasShadow="False" Padding="5" Margin="10,10,10,0" BackgroundColor="#fffee1">
                                     <StackLayout>
                                         <Label Text="{Binding Title}" Style="{StaticResource HeadText}"/>
                                         <Label Text="{Binding Description}" Style="{StaticResource CaptionText}" FontSize="Caption" />
-                                        <Button Text="Accomplished" Clicked="OnToDoDoneClicked" Style="{StaticResource MPGreenButton}"/>
+                                        <Button Text="Accomplished" Clicked="OnToDoDoneClicked" Style="{StaticResource MPGreenButton}" Margin="10"/>
                                     </StackLayout>
                                 </Frame>
                             </ViewCell>
@@ -62,10 +72,10 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </Frame>
-            <Frame Grid.Row="3" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="3" Padding="0" Margin="10,0,10,10" HasShadow="False" CornerRadius="15">
-                <StackLayout BackgroundColor="#FFE298" >
+            <Frame Grid.Row="3" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource YellFrame}" Margin="10,0,10,10"  >
+                <StackLayout >
                     <Label Text="To Do" Style="{StaticResource HeadText}" Margin="10"/>
-                    <Button Text="Add" Clicked="OnToDoAddClicked" Style="{StaticResource MPGreenButton}" />
+                    <Button Text="Add" Clicked="OnToDoAddClicked" Style="{StaticResource MPGreenButton}" Margin="10"/>
                 </StackLayout>
             </Frame>
 
@@ -96,8 +106,8 @@
                 <StackLayout Padding="0,30,0,0">
                     <Button x:Name="PomPomModeButton" Clicked="OnPomPomModeButtonClicked" Text="POMODORO" TextTransform="None" BackgroundColor="#5B1515"></Button>
                     <StackLayout Orientation="Horizontal">
-                        <Button x:Name="PomShortModeButton" Clicked="OnPomShortModeButtonClicked" Text="Short Break" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515" Margin="0,0,14,0" ></Button>
-                        <Button x:Name="PomLongModeButton" Clicked="OnPomLongModeButtonClicked"  Text="Long Break" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515"></Button>
+                        <Button x:Name="PomShortModeButton" Clicked="OnPomShortModeButtonClicked" Text="Short Break" Style="{StaticResource RedButtons}" Margin="0,0,14,0" ></Button>
+                        <Button x:Name="PomLongModeButton" Clicked="OnPomLongModeButtonClicked"  Text="Long Break" Style="{StaticResource RedButtons}" ></Button>
                     </StackLayout>
 
                     <StackLayout>
@@ -106,8 +116,8 @@
                     
 
                     <StackLayout Orientation="Horizontal">
-                        <Button x:Name="PomToggleButton" Clicked="OnPomToggleButtonClicked" Text="Pause" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515" Margin="0,0,14,0"></Button>
-                        <Button x:Name="PomSkipButton" Clicked="OnPomSkipButtonClicked" Text="Skip" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515"></Button>
+                        <Button x:Name="PomToggleButton" Clicked="OnPomToggleButtonClicked" Text="Pause" Style="{StaticResource RedButtons}"  Margin="0,0,14,0"></Button>
+                        <Button x:Name="PomSkipButton" Clicked="OnPomSkipButtonClicked" Text="Skip" Style="{StaticResource RedButtons}" ></Button>
                     </StackLayout>
                     
                 </StackLayout>
@@ -134,7 +144,7 @@
                 <StackLayout BackgroundColor="#FFE298" Padding="50">
                     <Label Text="Bye!" Style="{StaticResource HeadText}" Margin="10"/>
                     <Label Text="Come Back Soon" Style="{StaticResource CaptionText}" FontSize="Medium" Margin="10"/>
-                    <Button Clicked="OnSignOutButtonClicked" Text="Sign Out" Grid.Row="2" BackgroundColor="#30420F" Margin="0,20,0,0" TextTransform="None"/>
+                    <Button Clicked="OnSignOutButtonClicked" Text="Sign Out" Grid.Row="2" Style="{StaticResource MPGreenButton}" Margin="0,20,0,0" />
                 </StackLayout>
 
             </Frame>

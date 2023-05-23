@@ -2,6 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.SignUpPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="HeadText" TargetType="Label">
+                <Setter Property="TextColor" Value="#789966" />
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="CaptionText" TargetType="Label">
+                <Setter Property="TextColor" Value="#789966" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="MPGreenButton" TargetType="Button">
+                <Setter Property="TextColor" Value="#fffee1" />
+                <Setter Property="TextTransform" Value="None" />
+                <Setter Property="BackgroundColor" Value="#2D3728" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="Margin" Value="0,0,0,10"
+            </Style>
+            <Style x:Key="ImgFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#fff8bc" />
+                <Setter Property="HasShadow" Value="False" />
+            </Style>
+            <Style x:Key="EntryFrame" TargetType="Frame">
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="Padding" Value="1" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Margin" Value="0,0,0,10" />
+                <Setter Property="BorderColor" Value="Black" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid BackgroundColor ="#fff8bc" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
@@ -23,20 +55,8 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <!-- <StackLayout Grid.Row="2" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="8"  BackgroundColor="Aquamarine" Padding="20">
-                <Label Text="Sign Up" TextColor="CornflowerBlue" FontSize="Medium"/>
-                <Label Text="Username" TextColor="CornflowerBlue" FontSize="Medium"/>
-                <Entry x:Name="UsernameEntry" Placeholder="Enter Username" PlaceholderColor="CornflowerBlue" IsReadOnly="False" TextColor="CornflowerBlue"></Entry>
-                <Label Text="Email" TextColor="CornflowerBlue" FontSize="Medium" />
-                <Entry x:Name="EmailEntry" Placeholder="Enter Email" PlaceholderColor="CornflowerBlue" IsReadOnly="False" TextColor="CornflowerBlue"></Entry>
-                <Label Text="Password" TextColor="CornflowerBlue" FontSize="Medium" />
-                <Entry x:Name="PasswordEntry" Placeholder="Enter Password" PlaceholderColor="CornflowerBlue" IsReadOnly="False" TextColor="CornflowerBlue"></Entry>
-                <Button Text="Sign Up" Clicked="OnSignUpClicked" Grid.Row="2"/>
-                <Button Text="Back" Clicked="OnBackClicked" Grid.Row="2"/>
-            </StackLayout> -->
-            
-            
-            <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="8" BackgroundColor="#fff8bc" HasShadow="False" Padding="0">
+                    
+            <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="8" Style="{StaticResource ImgFrame}">
                 <StackLayout>
                     <Image Source="TomatoTime" WidthRequest="400" HeightRequest="300"/>
                 </StackLayout>
@@ -45,24 +65,24 @@
             </Frame>
             <Frame BackgroundColor="#fff1c4" Grid.Row="2" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="8" Padding="0" Margin="10" HasShadow="False" CornerRadius="20">
                 <StackLayout Padding="20" BackgroundColor="#fffff5">
-                    <Label Text="Sign Up" FontAttributes="Bold" TextColor="#4A7631" FontSize="Medium" HorizontalTextAlignment="Center" Margin="0,0,0,10"/>
+                    <Label Text="Sign Up" Style="{StaticResource HeadText}"/>
                     <!--<Label Text="Username" TextColor="CornflowerBlue" FontSize="Medium"/>-->
-                    <Frame BorderColor="Black" HeightRequest="50" Padding="1" HasShadow="False" Margin="0,0,0,10" >
+                    <Frame Style="{StaticResource EntryFrame}" >
                         <Entry x:Name="UsernameEntry" Placeholder="Enter Username" PlaceholderColor="#789966" IsReadOnly="False" TextColor="#789966" ></Entry>
                     </Frame>
 
                     <!--<Label Text="Email" TextColor="CornflowerBlue" FontSize="Medium" />-->
-                    <Frame BorderColor="Black" HeightRequest="50" Padding="1" HasShadow="False" Margin="0,0,0,10">
+                    <Frame Style="{StaticResource EntryFrame}">
                         <Entry x:Name="EmailEntry" Placeholder="Enter Email" PlaceholderColor="#789966" IsReadOnly="False" Keyboard ="Email" TextColor="#789966"></Entry>
                     </Frame>
 
                     <!--<Label Text="Password" TextColor="CornflowerBlue" FontSize="Medium" />-->
-                    <Frame BorderColor="Black" HeightRequest="50" Padding="1" HasShadow="False" Margin="0,0,0,10">
+                    <Frame Style="{StaticResource EntryFrame}">
                         <Entry x:Name="PasswordEntry" Placeholder="Enter Password" PlaceholderColor="#789966" IsReadOnly="False" IsPassword="True" Keyboard ="Text" TextColor="#789966"></Entry>
                     </Frame>
 
-                    <Button Text="Sign Up" Clicked="OnSignUpClicked" Grid.Row="2" HeightRequest="50" TextTransform="None" BackgroundColor="#2D3728" Margin="0,0,0,10"/>
-                    <Button Text="Back" Clicked="OnBackClicked" Grid.Row="2" HeightRequest="50" TextTransform="None" BackgroundColor="#2D3728" Margin="0,0,0,10"/>
+                    <Button Text="Sign Up" Clicked="OnSignUpClicked" Grid.Row="2" Style="{StaticResource MPGreenButton}"/>
+                    <Button Text="Back" Clicked="OnBackClicked" Grid.Row="2" Style="{StaticResource MPGreenButton}"/>
 
                 </StackLayout>
             </Frame>
