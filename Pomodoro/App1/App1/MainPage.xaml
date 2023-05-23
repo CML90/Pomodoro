@@ -71,20 +71,20 @@
             </Grid.RowDefinitions>
             <Frame Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="8" BackgroundColor="#691D1D" Padding="20" Margin="15" CornerRadius="20" HasShadow="False">
                 <StackLayout Padding="0,30,0,0">
-                    <Button Text="POMODORO" TextTransform="None" BackgroundColor="#5B1515"></Button>
+                    <Button x:Name="PomPomModeButton" Clicked="OnPomPomModeButtonClicked" Text="POMODORO" TextTransform="None" BackgroundColor="#5B1515"></Button>
                     <StackLayout Orientation="Horizontal">
-                        <Button Text="Short Break" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515" Margin="0,0,14,0" ></Button>
-                        <Button Text="Long Break" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515"></Button>
+                        <Button x:Name="PomShortModeButton" Clicked="OnPomShortModeButtonClicked" Text="Short Break" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515" Margin="0,0,14,0" ></Button>
+                        <Button x:Name="PomLongModeButton" Clicked="OnPomLongModeButtonClicked"  Text="Long Break" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515"></Button>
                     </StackLayout>
 
                     <StackLayout>
-                        <Label Text="24:00" FontAttributes="Bold" FontSize="Header" ></Label>
+                        <Label x:Name="PomTimeLabel" Text="24:00" FontAttributes="Bold" FontSize="Header" ></Label>
                     </StackLayout>
                     
 
                     <StackLayout Orientation="Horizontal">
-                        <Button Text="Pause" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515" Margin="0,0,14,0"></Button>
-                        <Button Text="Skip" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515"></Button>
+                        <Button x:Name="PomToggleButton" Clicked="OnPomToggleButtonClicked" Text="Pause" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515" Margin="0,0,14,0"></Button>
+                        <Button x:Name="PomSkipButton" Clicked="OnPomSkipButtonClicked" Text="Skip" WidthRequest="160" TextTransform="None" BackgroundColor="#5B1515"></Button>
                     </StackLayout>
                     
                 </StackLayout>
@@ -111,7 +111,7 @@
                 <StackLayout BackgroundColor="#FFE298" Padding="50">
                     <Label Text="Bye!" FontSize="Medium" TextColor="#789966" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="10"/>
                     <Label Text="Come Back Soon" FontSize="Medium" TextColor="#789966" HorizontalTextAlignment="Center" Margin="10"/>
-                    <Button Text="Sign Out" Grid.Row="2" BackgroundColor="#30420F" Margin="0,20,0,0" TextTransform="None"/>
+                    <Button Clicked="OnSignOutButtonClicked" Text="Sign Out" Grid.Row="2" BackgroundColor="#30420F" Margin="0,20,0,0" TextTransform="None"/>
                 </StackLayout>
 
             </Frame>
