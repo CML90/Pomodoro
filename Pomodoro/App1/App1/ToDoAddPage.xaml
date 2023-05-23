@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1.Page1">
+             x:Class="App1.ToDoAddPage">
     <ContentPage.Content>
         <Grid BackgroundColor ="#fff1c4" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
@@ -18,9 +18,9 @@
             <Frame  HasShadow="False" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" Padding="0" Margin="10" CornerRadius="20" >
                 <StackLayout BackgroundColor="#F6D07B" Padding="20">
                     <Label Text="To Do" FontSize="Medium" TextColor="#3B2E11" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="10"/>
-                    <Entry Placeholder="Enter Title" PlaceholderColor="#69572E" IsReadOnly="False" TextColor="#69572E" Margin="0,5,0,0" Keyboard="Text"></Entry>
-                    <Editor Placeholder="Enter Description" PlaceholderColor="#69572E" IsReadOnly="False" TextColor="#69572E" Margin="0,5,0,0" Keyboard="Text"></Editor>
-                    <Button Text="Done" Grid.Row="2" BackgroundColor="#30420F" Margin="0,20,0,0"/>
+                    <Entry x:Name="EntryTitle" Placeholder="Enter Title" PlaceholderColor="#69572E" IsReadOnly="False" TextColor="#69572E" Margin="0,5,0,0" Keyboard="Text"></Entry>
+                    <Editor x:Name="EntryDesc" Placeholder="Enter Description" PlaceholderColor="#69572E" IsReadOnly="False" TextColor="#69572E" Margin="0,5,0,0" Keyboard="Text"></Editor>
+                    <Button Text="Done" Clicked="OnEnterButtonClicked" Grid.Row="2" BackgroundColor="#30420F" Margin="0,20,0,0"/>
                 </StackLayout>
 
             </Frame>

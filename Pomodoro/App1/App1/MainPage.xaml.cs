@@ -13,14 +13,17 @@ namespace App1
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : TabbedPage
     {
+        private ToDoServer ToDo = ToDoServer.GetInstance();
         private PomodoroServer Pomodoro = PomodoroServer.GetInstance();
         public MainPage()
         {
             InitializeComponent();
+
+            ToDo.AssignListView(ToDoListView);
+
             Pomodoro.OnRunningChanged += OnPomodoroRunningChanged;
             Pomodoro.OnModeChanged += OnPomodoroModeChanged;
             Pomodoro.OnTimeChanged += OnPomodoroTimeChanged;
-
             Pomodoro.Reset();
         }
 
@@ -71,9 +74,22 @@ namespace App1
             Pomodoro.ChangeMode(PomodoroServer.Mode.LongBreak);
         }
 
-        private void OnSignOutButtonClicked(object sender, EventArgs e)
+        private async void OnSignOutButtonClicked(object sender, EventArgs e)
         {
             Pomodoro.Reset();
+            await Navigation.PopAsync();
+        }
+
+        private async void OnToDoAddClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ToDoAddPage());
+        }
+
+        private void OnToDoDoneClicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var item = button.BindingContext as ListItem;
+            ToDo.Remove(item);
         }
     }
 }

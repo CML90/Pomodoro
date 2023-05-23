@@ -24,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Add.xaml.cs">
-      <DependentUpon>Add.xaml</DependentUpon>
+    <Compile Update="ToDoAddPage.xaml.cs">
+      <DependentUpon>ToDoAddPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="SignUpPage.xaml.cs">
       <DependentUpon>SignUpPage.xaml</DependentUpon>
@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Add.xaml">
+    <EmbeddedResource Update="ToDoAddPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="SignUpPage.xaml">

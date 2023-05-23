@@ -21,7 +21,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Frame  CornerRadius="15" HasShadow="False" Padding="0" Margin="10" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#FFE298"  >
-                <ListView x:Name="myListView" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3"
+                <ListView x:Name="ToDoListView" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="3"
                   VerticalOptions="FillAndExpand"
                   HasUnevenRows="true" BackgroundColor="#FFE298">
                     <ListView.ItemTemplate>
@@ -31,7 +31,7 @@
                                     <StackLayout>
                                         <Label Text="{Binding Title}" TextColor="#789966" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                                         <Label Text="{Binding Description}" TextColor="#789966" FontSize="Caption" HorizontalTextAlignment="Center"/>
-                                        <Button Text="Accomplished" BackgroundColor="#2D3728" Margin="10"/>
+                                        <Button Text="Accomplished" Clicked="OnToDoDoneClicked" BackgroundColor="#2D3728" Margin="10"/>
                                     </StackLayout>
                                 </Frame>
                             </ViewCell>
@@ -42,7 +42,7 @@
             <Frame Grid.Row="3" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="3" Padding="0" Margin="10,0,10,10" HasShadow="False" CornerRadius="15">
                 <StackLayout BackgroundColor="#FFE298" >
                     <Label Text="To Do" FontSize="Medium" TextColor="#789966" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="10"/>
-                    <Button Text="Add" TextColor="#fffee1" BackgroundColor="#2D3728" Margin="10" TextTransform="None" />
+                    <Button Text="Add" Clicked="OnToDoAddClicked" TextColor="#fffee1" BackgroundColor="#2D3728" Margin="10" TextTransform="None" />
                 </StackLayout>
             </Frame>
 
