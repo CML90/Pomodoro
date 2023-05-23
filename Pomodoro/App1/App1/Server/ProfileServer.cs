@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace App1
+namespace App1.Server
 {
     public sealed class ProfileServer
     {
@@ -12,7 +12,7 @@ namespace App1
 
         public static ProfileServer GetInstance()
         {
-            if (_instance == null )
+            if (_instance == null)
                 _instance = new ProfileServer();
             return _instance;
         }
@@ -25,9 +25,9 @@ namespace App1
 
             public Account(string username, string email, string password)
             {
-                this.Username = username;
-                this.Email = email;
-                this.Password = password;
+                Username = username;
+                Email = email;
+                Password = password;
             }
         }
 
@@ -38,7 +38,7 @@ namespace App1
             if (username.Length == 0 || email.Length == 0 || password.Length == 0)
                 return false;
             int usedAccountsCount = accounts
-                .Where((Account account) => account.Username == username || account.Email == email)
+                .Where((account) => account.Username == username || account.Email == email)
                 .Count();
             if (usedAccountsCount > 0)
                 return false;
@@ -46,10 +46,10 @@ namespace App1
             return true;
         }
 
-        public bool AccountExists(string username,string password)
+        public bool AccountExists(string username, string password)
         {
             return accounts
-                .Where((Account account) => account.Username == username && account.Password == password)
+                .Where((account) => account.Username == username && account.Password == password)
                 .Count() > 0;
         }
     }
