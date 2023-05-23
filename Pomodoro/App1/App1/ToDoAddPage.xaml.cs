@@ -20,15 +20,21 @@ namespace App1
 
         private async void OnEnterButtonClicked(object sender, EventArgs e)
         {
-			string title = EntryTitle.Text;
-			string desc = EntryDesc.Text;
+			string title = EntryTitle.Text ?? "";
+			string desc = EntryDesc.Text ?? "";
 
             if (title.Length > 0)
 			{
 				ToDoServer todo = ToDoServer.GetInstance();
 				todo.Add(title, desc);
-                await Navigation.PopAsync();
+                await Navigation.PopModalAsync();
             }
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            BackgroundColor = new Color(0, 0, 0, 0.5);
         }
     }
 }
