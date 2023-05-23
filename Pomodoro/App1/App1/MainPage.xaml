@@ -6,6 +6,29 @@
             android:TabbedPage.ToolbarPlacement="Bottom"
             android:TabbedPage.BarItemColor="White"
             >
+
+    <TabbedPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="HeadText" TargetType="Label">
+                <Setter Property="TextColor" Value="#789966" />
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="CaptionText" TargetType="Label">
+                <Setter Property="TextColor" Value="#789966" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="MPGreenButton" TargetType="Button">
+                <Setter Property="TextColor" Value="#fffee1" />
+                <Setter Property="TextTransform" Value="None" />
+                <Setter Property="BackgroundColor" Value="#2D3728" />
+                <Setter Property="Margin" Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </TabbedPage.Resources>
+    
+    
     <!--Pages can be added as references or inline-->
     <ContentPage Title="Tasks" >
         <Grid BackgroundColor ="#fffee1" VerticalOptions="FillAndExpand">
@@ -29,9 +52,9 @@
                             <ViewCell>
                                 <Frame CornerRadius="5" HasShadow="False" Padding="5" Margin="20" BackgroundColor="#fffee1">
                                     <StackLayout>
-                                        <Label Text="{Binding Title}" TextColor="#789966" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                                        <Label Text="{Binding Description}" TextColor="#789966" FontSize="Caption" HorizontalTextAlignment="Center"/>
-                                        <Button Text="Accomplished" Clicked="OnToDoDoneClicked" BackgroundColor="#2D3728" Margin="10"/>
+                                        <Label Text="{Binding Title}" Style="{StaticResource HeadText}"/>
+                                        <Label Text="{Binding Description}" Style="{StaticResource CaptionText}" FontSize="Caption" />
+                                        <Button Text="Accomplished" Clicked="OnToDoDoneClicked" Style="{StaticResource MPGreenButton}"/>
                                     </StackLayout>
                                 </Frame>
                             </ViewCell>
@@ -41,8 +64,8 @@
             </Frame>
             <Frame Grid.Row="3" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="3" Padding="0" Margin="10,0,10,10" HasShadow="False" CornerRadius="15">
                 <StackLayout BackgroundColor="#FFE298" >
-                    <Label Text="To Do" FontSize="Medium" TextColor="#789966" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="10"/>
-                    <Button Text="Add" Clicked="OnToDoAddClicked" TextColor="#fffee1" BackgroundColor="#2D3728" Margin="10" TextTransform="None" />
+                    <Label Text="To Do" Style="{StaticResource HeadText}" Margin="10"/>
+                    <Button Text="Add" Clicked="OnToDoAddClicked" Style="{StaticResource MPGreenButton}" />
                 </StackLayout>
             </Frame>
 
@@ -109,8 +132,8 @@
             </Grid.RowDefinitions>
             <Frame  HasShadow="False" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" Padding="0" Margin="10" CornerRadius="20" >
                 <StackLayout BackgroundColor="#FFE298" Padding="50">
-                    <Label Text="Bye!" FontSize="Medium" TextColor="#789966" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="10"/>
-                    <Label Text="Come Back Soon" FontSize="Medium" TextColor="#789966" HorizontalTextAlignment="Center" Margin="10"/>
+                    <Label Text="Bye!" Style="{StaticResource HeadText}" Margin="10"/>
+                    <Label Text="Come Back Soon" Style="{StaticResource CaptionText}" FontSize="Medium" Margin="10"/>
                     <Button Clicked="OnSignOutButtonClicked" Text="Sign Out" Grid.Row="2" BackgroundColor="#30420F" Margin="0,20,0,0" TextTransform="None"/>
                 </StackLayout>
 
