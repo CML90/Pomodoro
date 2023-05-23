@@ -82,7 +82,7 @@ namespace App1
 
         private async void OnToDoAddClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ToDoAddPage());
+            await Navigation.PushModalAsync(new ToDoAddPage());
         }
 
         private void OnToDoDoneClicked(object sender, EventArgs e)

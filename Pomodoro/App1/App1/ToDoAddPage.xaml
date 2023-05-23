@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.ToDoAddPage">
     <ContentPage.Content>
-        <Grid BackgroundColor ="#fff1c4" VerticalOptions="FillAndExpand">
+        <Grid VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
