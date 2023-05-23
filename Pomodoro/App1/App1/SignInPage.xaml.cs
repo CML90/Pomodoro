@@ -15,8 +15,16 @@ namespace App1
             InitializeComponent();
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            await SignInLogo.TranslateTo(SignInLogo.TranslationX, 15, 200);
+        }
+
         private async void OnSignInClicked(object sender, EventArgs e)
         {
+            await SignInLogo.TranslateTo(SignInLogo.TranslationX, -350, 120);
             await Navigation.PushAsync(new MainPage());
             //if (ProfileServer.GetInstance().AccountExists(UsernameEntry.Text, PasswordEntry.Text))
             //    await Navigation.PushAsync(new MainPage());

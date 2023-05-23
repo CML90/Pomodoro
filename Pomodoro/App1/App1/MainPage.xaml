@@ -140,6 +140,8 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+            
+
             <Frame  HasShadow="False" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" Padding="0" Margin="10" CornerRadius="20" >
                 <StackLayout BackgroundColor="#FFE298" Padding="50">
                     <Label Text="Bye!" Style="{StaticResource HeadText}" Margin="10"/>

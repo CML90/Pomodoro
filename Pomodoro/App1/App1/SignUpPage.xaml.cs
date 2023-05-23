@@ -14,6 +14,14 @@ namespace App1
         public SignUpPage()
         {
             InitializeComponent();
+            
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+           
+            await SignUpLogo.RotateTo(360,240);
         }
 
         private async void OnSignUpClicked(object sender, EventArgs e)

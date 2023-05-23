@@ -19,7 +19,7 @@
                 <Setter Property="TextTransform" Value="None" />
                 <Setter Property="BackgroundColor" Value="#2D3728" />
                 <Setter Property="HeightRequest" Value="50" />
-                <Setter Property="Margin" Value="0,0,0,10"
+                <Setter Property="Margin" Value="0,0,0,10" />
             </Style>
             <Style x:Key="ImgFrame" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="#fff8bc" />
@@ -58,7 +58,7 @@
                     
             <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="8" Style="{StaticResource ImgFrame}">
                 <StackLayout>
-                    <Image Source="TomatoTime" WidthRequest="400" HeightRequest="300"/>
+                    <Image x:Name="SignUpLogo" Source="TomatoTime" WidthRequest="400" HeightRequest="300"/>
                 </StackLayout>
                     
              
