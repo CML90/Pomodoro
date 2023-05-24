@@ -11,9 +11,20 @@ namespace App1
 {
     public partial class SignInPage : ContentPage
     {
+        bool Logged
+        {
+            get {
+                return Application.Current.Properties.ContainsKey("logged") ? Convert.ToBoolean(Application.Current.Properties["logged"]) : false;
+            }
+            set { 
+                Application.Current.Properties["logged"] = value;
+            }
+        }
+
         public SignInPage()
         {
             InitializeComponent();
+            Application.Current.SavePropertiesAsync();
         }
 
         protected override async void OnAppearing()
@@ -21,6 +32,8 @@ namespace App1
             base.OnAppearing();
 
             await SignInLogo.TranslateTo(SignInLogo.TranslationX, 15, 400, Easing.SpringOut);
+            if (Logged)
+                await GoToMainPage();
         }
 
         private async void OnSignInClicked(object sender, EventArgs e)
@@ -34,7 +47,11 @@ namespace App1
 
         private async Task GoToMainPage()
         {
+            Logged = true;
+            await Application.Current.SavePropertiesAsync();
             await Navigation.PushAsync(new MainPage());
+            Logged = false;
+            await Application.Current.SavePropertiesAsync();
         }
 
         private async void OnSignUpClicked(object sender, EventArgs e)

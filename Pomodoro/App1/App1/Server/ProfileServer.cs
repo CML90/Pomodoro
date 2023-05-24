@@ -33,6 +33,14 @@ namespace App1.Server
 
         private List<Account> accounts = new List<Account>();
 
+        private ProfileServer()
+        {
+            if (Application.Current.Properties.ContainsKey("profiles") && Application.Current.Properties["profiles"] as List<Account> is List<Account> newAccounts)
+            {
+                accounts = newAccounts;
+            }
+        }
+
         public bool AddAccount(string username, string email, string password)
         {
             if (username.Length == 0 || email.Length == 0 || password.Length == 0)
@@ -43,6 +51,7 @@ namespace App1.Server
             if (usedAccountsCount > 0)
                 return false;
             accounts.Add(new Account(username, email, password));
+            Application.Current.Properties["profiles"] = accounts;
             return true;
         }
 

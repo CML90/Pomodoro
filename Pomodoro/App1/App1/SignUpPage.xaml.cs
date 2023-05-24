@@ -27,7 +27,10 @@ namespace App1
         private async void OnSignUpClicked(object sender, EventArgs e)
         {
             if (ProfileServer.GetInstance().AddAccount(UsernameEntry.Text, EmailEntry.Text, PasswordEntry.Text))
+            {
+                await Application.Current.SavePropertiesAsync();
                 await Navigation.PopAsync();
+            }
         }
 
         private async void OnBackClicked(object sender, EventArgs e)
