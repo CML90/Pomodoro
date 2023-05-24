@@ -57,7 +57,14 @@
             </Grid.RowDefinitions>
 
             <Frame Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="8" Style="{StaticResource ImgFrame}">
-                <Image x:Name="SignInLogo" Source="TomatoTime" />
+                <Image x:Name="SignInLogo" Source="TomatoTime">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="OnSignInLogoTapped"
+                            NumberOfTapsRequired="1"
+                            />
+                    </Image.GestureRecognizers>
+                </Image>
             </Frame>
             <Frame Grid.Row="2" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="8" Padding="0" Margin="10" HasShadow="False" CornerRadius="20">
                 <StackLayout Padding="20" BackgroundColor="#fffff5">
